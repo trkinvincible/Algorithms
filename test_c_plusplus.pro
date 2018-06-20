@@ -12,4 +12,6 @@ HEADERS += \
     add_2_no_to_get_val.h \
     find_common_elemnt.h \
     bfs_binarytree.h \
-    build_binary_tree.h
+    build_binary_tree.h \
+    generate_test_data.h \
+    learn_variadic_templates.h

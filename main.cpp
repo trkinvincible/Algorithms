@@ -5,11 +5,27 @@
 #include "find_common_elemnt.h"
 #include "cond_variable_lock.h"
 #include "bfs_binarytree.h"
+#include "generate_test_data.h"
+#include "learn_variadic_templates.h"
 
 using namespace std;
 
+
+class Animal{
+
+public:
+    int how_many=10;
+};
+class Dog : public Animal{
+
+};
+
 int main(int argc, char *argv[])
 {
+    Animal*ptr = new Dog();
+
+    std::cout << ptr->how_many << std::endl;
+
     std::unique_ptr<Command> obj;
     int prog = atoi(argv[1]);
 
@@ -37,7 +53,20 @@ int main(int argc, char *argv[])
         obj.reset(new bfs_binarytree());
     }
         break;
+
+    case 5:
+    {
+        obj.reset(new generate_test_data());
     }
+        break;
+
+    case 6:
+    {
+        obj.reset(new learn_variadic_templates());
+    }
+        break;
+    }
+
     obj->execute();
     return 0;
 }
