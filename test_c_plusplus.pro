@@ -1,5 +1,5 @@
 TEMPLATE = app
-CONFIG += console c++11
+CONFIG += console c++1z#c++ 17
 CONFIG -= app_bundle
 CONFIG -= qt
 LIBS += -pthread
@@ -14,4 +14,6 @@ HEADERS += \
     bfs_binarytree.h \
     build_binary_tree.h \
     generate_test_data.h \
-    learn_variadic_templates.h
+    learn_variadic_templates.h \
+    try_cplusplus_17.h \
+    bbm_interview_questions.h

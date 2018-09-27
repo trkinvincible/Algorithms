@@ -7,25 +7,14 @@
 #include "bfs_binarytree.h"
 #include "generate_test_data.h"
 #include "learn_variadic_templates.h"
+#include "try_cplusplus_17.h"
+#include "bbm_interview_questions.h"
 
 using namespace std;
 
 
-class Animal{
-
-public:
-    int how_many=10;
-};
-class Dog : public Animal{
-
-};
-
 int main(int argc, char *argv[])
 {
-    Animal*ptr = new Dog();
-
-    std::cout << ptr->how_many << std::endl;
-
     std::unique_ptr<Command> obj;
     int prog = atoi(argv[1]);
 
@@ -63,6 +52,17 @@ int main(int argc, char *argv[])
     case 6:
     {
         obj.reset(new learn_variadic_templates());
+    }
+        break;
+    case 7:
+    {
+        obj.reset(new try_cplusplus_17());
+    }
+        break;
+
+    case 8:
+    {
+        obj.reset(new bbm_interview_questions());
     }
         break;
     }
