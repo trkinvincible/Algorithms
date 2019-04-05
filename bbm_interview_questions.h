@@ -33,11 +33,11 @@ class bbm_interview_questions : public Command{
 
         int n=4;
         std::string s("jakartha");
-        std::string s2("");
-        s2.resize(s.size());
+        std::string s2;
+        s2.reserve(s.size());
         std::copy_n(s.begin(),3,s2.begin());
         std::ostream os(std::cout.rdbuf());
-        s2.shrink_to_fit();
+        //boost::algorithm::trim(s2);
         int len = s2.length();
         switch(len){
 
@@ -81,10 +81,13 @@ class bbm_interview_questions : public Command{
 //        === Output END ===
         /*###########################################################################*/
 
+        using phonebook_record = std::tuple<std::string,std::string,long long >;
+        using phonebook = std::list<phonebook_record>;
+
         std::string input = "Charlie,Zoe,081231;Andre,Xavier,08111;Charlie,Xyz,08123;Jean,Summers,08001";
         std::vector<std::string> values;
         phonebook pb;
-        boost::algorithm::split(values, input, boost::is_any_of(",;"));
+        boost::algorithm::split(values, input, boost::is_any_of(";"));
         int record = 0;
         while(record < values.size()){
 

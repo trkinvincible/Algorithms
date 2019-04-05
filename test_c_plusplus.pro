@@ -16,4 +16,7 @@ HEADERS += \
     generate_test_data.h \
     learn_variadic_templates.h \
     try_cplusplus_17.h \
-    bbm_interview_questions.h
+    bbm_interview_questions.h \
+    move_schematics.h \
+    visa_interview.h \
+    jump_trading.h

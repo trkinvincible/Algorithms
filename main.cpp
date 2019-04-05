@@ -9,9 +9,9 @@
 #include "learn_variadic_templates.h"
 #include "try_cplusplus_17.h"
 #include "bbm_interview_questions.h"
-
-using namespace std;
-
+#include "move_schematics.h"
+#include "visa_interview.h"
+#include "jump_trading.h"
 
 int main(int argc, char *argv[])
 {
@@ -63,6 +63,24 @@ int main(int argc, char *argv[])
     case 8:
     {
         obj.reset(new bbm_interview_questions());
+    }
+        break;
+
+    case 9:
+    {
+        obj.reset(new move_schematics());
+    }
+        break;
+
+    case 10:
+    {
+        obj.reset(new visa_interview());
+    }
+        break;
+
+    case 11:
+    {
+        obj.reset(new jump_trading());
     }
         break;
     }
