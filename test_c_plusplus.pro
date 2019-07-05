@@ -1,8 +1,18 @@
 TEMPLATE = app
 CONFIG += console c++1z#c++ 17
+CONFIG += openssl-linked
+PKGCONFIG += openssl
+
 CONFIG -= app_bundle
-CONFIG -= qt
-LIBS += -pthread
+QT += core
+QT += network
+QT -= gui
+QT += widgets
+
+LIBS += -latomic -lboost_system -pthread -lssl -lcrypto \
+        -lpthread -Wl,--no-as-needed \
+        -lprofiler -ltcmalloc \
+        -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free
 
 SOURCES += main.cpp
 
@@ -19,4 +29,11 @@ HEADERS += \
     bbm_interview_questions.h \
     move_schematics.h \
     visa_interview.h \
-    jump_trading.h
+    jump_trading.h \
+    razer_interview.h \
+    learn_atomics.h \
+    practice.h \
+    smiths.h \
+    boost_asio.h \
+    qt_network.h
+    altonomy.h

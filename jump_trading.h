@@ -104,13 +104,35 @@ int mymincost(std::vector<int> &input)
 //if input is [1,7,8,9,10] then the required output is 9
 //if input is [1,7,8,9,10,15] then the required output is 11
 
+
+template <std::size_t n>
+class fib{
+public:
+    const std::size_t value = n * fib<n-1>().value;
+};
+template<>
+class fib<0>{
+public:
+    const std::size_t value = 1;
+};
+
 class jump_trading: public Command{
 
 public:
+    int get_array_size(){
+
+        return 5;
+    }
     void execute()
     {
+        using array_size_type = int;
+        array_size_type array_size = get_array_size();
+        int test_array[get_array_size()];
+        std::cout << sizeof(test_array) << std::endl;
+
+        //std::cout << fib<4>().value << std::endl;
         std::vector<int> i{1,2,4,5,7,29,30};
-        std::cout << "calculated: " << mymincost(i) <<std::endl;
+        //std::cout << "calculated: " << mymincost(i) <<std::endl;
     }
 };
 

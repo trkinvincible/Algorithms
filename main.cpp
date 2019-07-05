@@ -12,6 +12,13 @@
 #include "move_schematics.h"
 #include "visa_interview.h"
 #include "jump_trading.h"
+#include "razer_interview.h"
+#include "learn_atomics.h"
+#include "smiths.h"
+#include "boost_asio.h"
+#include "practice.h"
+#include "altonomy.h"
+#include "qt_network.h"
 
 int main(int argc, char *argv[])
 {
@@ -66,11 +73,11 @@ int main(int argc, char *argv[])
     }
         break;
 
-    case 9:
-    {
-        obj.reset(new move_schematics());
-    }
-        break;
+//    case 9:
+//    {
+//        obj.reset(new move_schematics());
+//    }
+//        break;
 
     case 10:
     {
@@ -81,6 +88,43 @@ int main(int argc, char *argv[])
     case 11:
     {
         obj.reset(new jump_trading());
+    }
+        break;
+    case 12:
+    {
+        obj.reset(new razer_interview());
+    }
+        break;
+    case 13:
+    {
+        obj.reset(new learn_atomics());
+    }
+        break;
+
+    case 14:
+    {
+        obj.reset(new smiths());
+    }
+        break;
+    case 16:
+    {
+        obj.reset(new practice());
+    }
+        break;
+    case 17:
+    {
+        obj.reset(new boost_asio());
+    }
+        break;
+    case 18:
+    {
+        obj.reset(new altonomy());
+    }
+        break;
+
+    case 19:
+    {
+        obj.reset(new qt_network());
     }
         break;
     }
