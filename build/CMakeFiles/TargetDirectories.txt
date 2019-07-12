@@ -1,0 +1,4 @@
+/home/thangrad/Documents/ML/practice/test_c_plusplus/build/CMakeFiles/rebuild_cache.dir
+/home/thangrad/Documents/ML/practice/test_c_plusplus/build/CMakeFiles/test_c_plusplus.dir
+/home/thangrad/Documents/ML/practice/test_c_plusplus/build/CMakeFiles/edit_cache.dir
+/home/thangrad/Documents/ML/practice/test_c_plusplus/build/CMakeFiles/test_c_plusplus_autogen.dir

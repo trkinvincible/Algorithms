@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="test_c_plusplus"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_c_plusplus">
+				<Option output="/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/test_c_plusplus" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_c_plusplus"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_c_plusplus/fast">
+				<Option output="/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/test_c_plusplus" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_c_plusplus/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/thangrad/Documents/ML/practice/test_c_plusplus/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/add_2_no_to_get_val.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/altonomy.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/bbm_interview_questions.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/bfs_binarytree.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/boost_asio.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/build_binary_tree.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/cachemanager.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/command.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/cond_variable_lock.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/find_common_elemnt.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/generate_test_data.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/hashtable.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/jump_trading.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/lcs_dyn_prog.cpp">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/learn_atomics.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/learn_variadic_templates.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/main.cpp">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/move.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/move_schematics.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/practice.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/qt_network.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/razer_interview.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/smiths.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/try_cplusplus_17.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/visa_interview.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/writer.h">
+			<Option target="test_c_plusplus"/>
+		</Unit>
+		<Unit filename="/home/thangrad/Documents/ML/practice/test_c_plusplus/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
