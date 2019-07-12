@@ -1,0 +1,12 @@
+how to install google performance tools for ubuntu
+#1 - sudo apt-get install google-perftools libgoogle-perftools-dev
+#2 - compile the program with 
+	-lpthread -ltcmalloc -Wl,--no-as-needed -lprofiler
+    -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free
+#3 - env HEAPPROFILE=<some_name>.hprof <binary_name>
+#4 - how to run the gprof?
+     gprof test_c_plusplus > ~/Documents/ML/practice/test_c_plusplus/gprof.txt
+$4 - how to view output?
+	 google-pprof --gv ./build-groundlabs-Desktop_Qt_5_7_0_GCC_64bit-Default/groundlabs g.hprof.0001.heap
+	 
+	 https://github.com/gperftools/gperftools
