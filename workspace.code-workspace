@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cctype": "cpp",
+			"qnetworksession": "cpp",
+			"*.ipp": "cpp",
+			"*.tcc": "cpp",
+			"fstream": "cpp",
+			"qdebug": "cpp",
+			"qbytearray": "cpp",
+			"qdatastream": "cpp"
+		}
+	}
+}

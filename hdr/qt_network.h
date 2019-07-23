@@ -7,6 +7,8 @@
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
+#include <QtNetwork/QTcpServer>
+#include <QtNetwork/QNetworkSession>
 #include <QUrl>
 #include <QUrlQuery>
 #include <QVariant>
@@ -18,7 +20,11 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
+#include <QDebug>
+#include <QtWidgets>
+#include <QtCore>
+#include <QByteArray>
+#include <QDataStream>
 
 class Downloader : public QObject
 {
@@ -66,7 +72,7 @@ public slots:
                 outfile.open("/home/thangrad/Documents/ML/practice/test_c_plusplus/qt_network_test.txt",std::ofstream::out | std::ofstream::app);
             }
             std::cout << reply->bytesAvailable() << std::endl;
-            //outfile << reply->readAll().toStdString() << std::endl;
+            outfile << reply->readAll().toStdString() << std::endl;
             outfile.flush();
             outfile.close();
 
@@ -102,20 +108,62 @@ private:
 
 };
 
+class RkServer : public QObject
+{
+    Q_OBJECT
+
+public:
+    explicit RkServer(QWidget *parent = nullptr){
+
+        tcpServer = new QTcpServer(this);
+        if (!tcpServer->listen()) {
+
+            std::cout << "Server isnt started to listen" << std::endl;
+            return;
+        }
+        QString ipAddress = QHostAddress(QHostAddress::LocalHost).toString();
+        std::cout << "Server is running at IP: " << ipAddress.toStdString() << " port: " << tcpServer->serverPort() << std::endl;
+
+        connect(tcpServer, &QTcpServer::newConnection, this, &RkServer::SendGreetings);
+    }
+
+private slots:
+    void SendGreetings(){
+
+        QByteArray block;
+        QDataStream out(&block, QIODevice::WriteOnly);
+        out << "va machi!!!\n\n";
+
+        QTcpSocket *clientConnection = tcpServer->nextPendingConnection();
+        connect(clientConnection, &QAbstractSocket::disconnected,
+                clientConnection, &QObject::deleteLater);
+
+        clientConnection->write(block);
+        clientConnection->flush();
+        clientConnection->disconnectFromHost();
+    }
+
+private:
+    QTcpServer *tcpServer = nullptr;
+    QNetworkSession *networkSession = nullptr;
+};
+
 class qt_network: public Command{
 
     void execute(){
 
         int argc = 1;
-        char * argv[] = {"test_c_plusplus"};
+        std::string s("test_c_plusplus");
+        char * argv[] = {s.data()};
+        
         QApplication app(argc,argv);
 
-        Downloader d;
-        d.doDownload();
+        //Downloader d;
+        //d.doDownload();
+        
+        RkServer server;
 
         app.exec();
-
-
     }
 };
 
