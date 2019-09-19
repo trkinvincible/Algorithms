@@ -214,13 +214,17 @@ class try_cplusplus_17 : public Command{
     void execute()
     {
 
-        something s;
-        std::packaged_task<std::string()> task1(std::bind(&something::don_have_named_parameters,s));
-        std::packaged_task<std::string(int,char)> task2(std::bind(&something::have_named_parameters,s,
-                                                                  1,
-                                                                  std::placeholders::_1));
+        std::unique_ptr<int[]> ptr1 = std::make_unique<int[]>(5);
+        std::unique_ptr<int[]> ptr2(new int[5]());
 
-        std::thread(std::move(task2),1,'2');
+
+        // something s;
+        // std::packaged_task<std::string()> task1(std::bind(&something::don_have_named_parameters,s));
+        // std::packaged_task<std::string(int,char)> task2(std::bind(&something::have_named_parameters,s,
+        //                                                           1,
+        //                                                           std::placeholders::_1));
+
+        // std::thread(std::move(task2),1,'2');
 
 //        std::string input = "aabbccaa";
 //        std::cout << "Minimum Operations: " << print(input);
