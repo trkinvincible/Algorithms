@@ -4,7 +4,10 @@ project(test_c_plusplus)
 set(CMAKE_CXX_STANDARD 17)
 #set(CMAKE_CXX_FLAGS "-pg") - use only with GCC 's own profiler
 
-list (APPEND CMAKE_PREFIX_PATH "/home/thangrad/Qt5.7.0")
+list (APPEND CMAKE_PREFIX_PATH "/media/trk/DATA/OpenSourceLibraries/Qt/5.13.1/gcc_64")
+
+message($CMAKE_PREFIX_PATH)
+
 set(CMAKE_AUTOMOC ON)
 
 SET( _SOURCES_
@@ -47,7 +50,7 @@ add_definitions(-DUSING_LOCK_FREE_CODE)
 ######################
 include_directories(
 
-        /home/thangrad/Qt5.7.0/5.7/gcc_64/include
+        /media/trk/DATA/OpenSourceLibraries/Qt/5.13.1/gcc_64/include
 )
 
 ######################
@@ -55,7 +58,7 @@ include_directories(
 ######################
 link_directories(
 
-        /home/thangrad/Qt5.7.0/5.7/gcc_64/lib
+        /media/trk/DATA/OpenSourceLibraries/Qt/5.13.1/gcc_64/lib
 )
 
 ######################
