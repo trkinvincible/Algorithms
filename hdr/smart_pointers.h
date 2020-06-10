@@ -3,7 +3,6 @@
 #include <atomic>
 #include <type_traits>
 #include <memory>
-#include <boost/shared_ptr.hpp>
 
 namespace rk {
 
@@ -86,20 +85,20 @@ public:
 
     // Copy Ctro
     rk_shared_ptr(const rk_shared_ptr& p_Rhs) noexcept
-        :mData(p_Rhs.mData), m_RefCount(p_Rhs.m_RefCount)
-    {
+        :mData(p_Rhs.mData), m_RefCount(p_Rhs.m_RefCount){
+
     }
     // Move Ctor
     rk_shared_ptr(rk_shared_ptr&& p_Rhs) noexcept
-        : mData(p_Rhs.mData)
-    {
+        : mData(p_Rhs.mData){
+
         m_RefCount = p_Rhs.m_RefCount;
         p_Rhs.mData = nullptr;
     }
 
     // Copy Assignment Operator
-    rk_shared_ptr& operator=(rk_shared_ptr& p_Rhs) noexcept
-    {
+    rk_shared_ptr& operator=(rk_shared_ptr& p_Rhs) noexcept{
+
         mData = p_Rhs.mData;
         if (p_Rhs.m_RefCount){
             p_Rhs.m_RefCount->AddRef();
@@ -110,38 +109,38 @@ public:
         m_RefCount = p_Rhs.m_RefCount;
         return *this;
     }
-    long use_count() const noexcept
-    {
+    long use_count() const noexcept{
+
         long v = (m_RefCount ? m_RefCount->GetRefCount() : 0);
         return v;
     }
-    void reset() noexcept
-    {
+    void reset() noexcept{
+
         rk_shared_ptr().swap(*this);
     }
-    void reset(element_type* p_NewPointer)
-    {
+    void reset(element_type* p_NewPointer){
+
         assert(p_NewPointer != nullptr);
         rk_shared_ptr(p_NewPointer).swap(*this);
     }
-    element_type& operator*() const noexcept
-    {
+    element_type& operator*() const noexcept{
+
         assert(mData != nullptr);
         return mData;
     }
 
-    element_type* operator->() const noexcept
-    {
+    element_type* operator->() const noexcept {
+
         assert(mData != nullptr);
         return mData;
     }
-    explicit operator bool() const
-    {
+    explicit operator bool() const {
+
         return (mData == nullptr ? false : true);
     }
 private:
     element_type* mData;
-    ControlBlock<element_type>* m_RefCount;
+    alignas(std::alignment_of<element_type>::value)ControlBlock<element_type>* m_RefCount;
 };
 }
 using namespace rk;
