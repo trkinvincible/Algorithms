@@ -5,12 +5,25 @@
 #include <memory>
 #include <boost/shared_ptr.hpp>
 
+namespace rk {
+
+template<typename T>
+class rk_shared_ptr;
+
+template<typename _Tp, typename... _Args>
+inline rk_shared_ptr<_Tp>
+make_shared(_Args&&... __args)
+{
+    typedef typename std::remove_const<_Tp>::type _Tp_nc;
+    return rk_shared_ptr<_Tp>(new _Tp_nc(std::forward<_Args>(__args)...));
+}
+
 template<typename T>
 class ControlBlock{
 
 public:
     explicit ControlBlock(T* p_NewPtr) noexcept
-    : mDataPtr(p_NewPtr), m_refCount(1) { }
+        : mDataPtr(p_NewPtr), m_refCount(1) { }
 
     void AddRef(){
 
@@ -99,8 +112,8 @@ public:
     }
     long use_count() const noexcept
     {
-       long v = (m_RefCount ? m_RefCount->GetRefCount() : 0);
-       return v;
+        long v = (m_RefCount ? m_RefCount->GetRefCount() : 0);
+        return v;
     }
     void reset() noexcept
     {
@@ -130,6 +143,8 @@ private:
     element_type* mData;
     ControlBlock<element_type>* m_RefCount;
 };
+}
+using namespace rk;
 
 class smart_pointer: public Command{
 
@@ -144,7 +159,7 @@ class smart_pointer: public Command{
             int a;
         };
         rk_shared_ptr<A> p;
-        rk_shared_ptr<A> p1(new A(5));
+        rk_shared_ptr<A> p1 = rk::make_shared<A>(5);
         std::cout << "use count of p1: " << p1.use_count() << std::endl;
         p = p1;
         std::cout << "use count of p1 after assigning to \"p\": " << p1.use_count() << std::endl;
