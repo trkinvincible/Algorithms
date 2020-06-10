@@ -37,6 +37,8 @@ SET( _HEADER_
         ${CMAKE_CURRENT_SOURCE_DIR}/hdr/smiths.h
         ${CMAKE_CURRENT_SOURCE_DIR}/hdr/try_cplusplus_17.h
         ${CMAKE_CURRENT_SOURCE_DIR}/hdr/visa_interview.h
+#        ${CMAKE_CURRENT_SOURCE_DIR}/hdr/trie.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/hdr/smart_pointers.h
 )
 
 ######################

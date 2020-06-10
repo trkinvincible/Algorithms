@@ -39,16 +39,18 @@ public:
         connect(manager, SIGNAL(finished(QNetworkReply*)),
                 this, SLOT(replyFinished(QNetworkReply*)));
 
-        QUrl url("https://jsonmock.hackerrank.com/api/movies/search/?Title=");
+        QUrl url("https://jsonmock.hackerrank.com/api/movies/search/");
         QNetworkRequest request;
         request.setUrl(url);
 
-        QSslConfiguration config = QSslConfiguration::defaultConfiguration();
-        config.setProtocol(QSsl::TlsV1SslV3);
-        request.setSslConfiguration(QSslConfiguration::defaultConfiguration());
+//        QSslConfiguration config = QSslConfiguration::defaultConfiguration();
+//        config.setProtocol(QSsl::TlsV1SslV3);
+//        request.setSslConfiguration(config);
 
-        request.setRawHeader("User-Agent" , "Rk is reading" );
-        request.setRawHeader("Content-Type","application/json");
+        //request.setSslConfiguration(QSslConfiguration::defaultConfiguration());
+
+        //request.setRawHeader("User-Agent" , "Rk is reading" );
+        //request.setRawHeader("Content-Type","application/json");
         manager->get(request);
     }
 
@@ -66,12 +68,14 @@ public slots:
         }
         else
         {
-            std::ofstream outfile("/home/thangrad/Documents/ML/practice/test_c_plusplus/qt_network_test.txt");
+            std::ofstream outfile("/media/trk/DATA/QtCreator-Projects/practice/test_c_plusplus/qt_network_test.txt");
             if(!outfile.is_open()){
 
-                outfile.open("/home/thangrad/Documents/ML/practice/test_c_plusplus/qt_network_test.txt",std::ofstream::out | std::ofstream::app);
+                outfile.open("/media/trk/DATA/QtCreator-Projects/practice/test_c_plusplus/qt_network_test.txt",std::ofstream::out | std::ofstream::app);
             }
             std::cout << reply->bytesAvailable() << std::endl;
+            std::cout << reply->readAll().toStdString() << std::endl;
+
             outfile << reply->readAll().toStdString() << std::endl;
             outfile.flush();
             outfile.close();
@@ -99,7 +103,7 @@ public slots:
             }
 
 
-            std::system("gnome-open /home/thangrad/Documents/ML/practice/test_c_plusplus/qt_network_test.txt");
+            std::system("subl /home/thangrad/Documents/ML/practice/test_c_plusplus/qt_network_test.txt");
         }
     }
 
@@ -158,10 +162,10 @@ class qt_network: public Command{
         
         QApplication app(argc,argv);
 
-        //Downloader d;
-        //d.doDownload();
+        Downloader d;
+        d.doDownload();
         
-        RkServer server;
+        //RkServer server;
 
         app.exec();
     }

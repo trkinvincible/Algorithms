@@ -7,45 +7,48 @@
 #include <stack>
 #include <mutex>
 
-
 std::stack<int> g_stack;
 std::mutex mu;
 std::once_flag flag;
 std::condition_variable cond_var;
 
-class producer{
+class producer
+{
 private:
     int input;
+
 public:
-    void operator()(){
+    void operator()()
+    {
 
         std::cout << "Enter producer" << endl;
-        while(input < 2000){
+        while (input < 2000)
+        {
             std::unique_lock<std::mutex> locker(mu);
             g_stack.push(input++);
             locker.unlock();
             cond_var.notify_all();
-            std::call_once(flag,[]()
-                                 {
-                                   std::cout << "called only once";
-                                 });
+            std::call_once(flag, []() {
+                std::cout << "called only once";
+            });
         }
     }
 };
-class consumer{
+class consumer
+{
 
 public:
-    void operator()(){
+    void operator()()
+    {
 
         std::cout << "Enter Consumer" << endl;
         std::unique_lock<std::mutex> locker(mu);
 
-        cond_var.wait(locker);
-        while(!g_stack.empty()){
-
-            std::cout << "Top element: " << g_stack.top() << endl;
-            g_stack.pop();
-        }
+        cond_var.wait(locker, []() {
+            return (!g_stack.empty());
+        });
+        std::cout << "Top element: " << g_stack.top() << endl;
+        g_stack.pop();
     }
 };
 

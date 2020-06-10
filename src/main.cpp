@@ -19,6 +19,8 @@
 #include "../hdr/practice.h"
 #include "../hdr/altonomy.h"
 #include "../hdr/qt_network.h"
+//#include "../hdr/trie.h"
+#include "../hdr/smart_pointers.h"
 
 int main(int argc, char *argv[])
 {
@@ -125,6 +127,18 @@ int main(int argc, char *argv[])
     case 19:
     {
         obj.reset(new qt_network());
+    }
+        break;
+
+//    case 20:
+//    {
+//        obj.reset(new trie());
+//    }
+//        break;
+
+    case 21:
+    {
+        obj.reset(new smart_pointer());
     }
         break;
     }
